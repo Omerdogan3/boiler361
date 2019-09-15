@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import HomeView from './HomeView';
+import PaymentView from './PaymentView';
+import { connect } from 'react-redux';
+import * as loginActions from 'app/actions/loginActions';
 import * as userActions from 'app/actions/userActions';
 
-import { connect } from 'react-redux';
-
-class HomeContainer extends Component {
+class PaymentContainer extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <HomeView {...this.props} />;
+        return <PaymentView {...this.props} />;
     }
 }
 
 function mapStateToProps(state) {
     return {
         number: state.userReducer.number,
-        // userData
+        // userData:
     };
 }
 function mapDispatchToProps(dispatch) {
     return {
-        setNumber: (number) => dispatch(userActions.setNumber(number))
+        onLogin: (un, pwd) => dispatch(loginActions.requestLogin(un, pwd))
     };
 }
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(HomeContainer);
+)(PaymentContainer);

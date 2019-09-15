@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LoginView from './LoginView';
 import { connect } from 'react-redux';
 import * as loginActions from 'app/actions/loginActions';
+import * as userActions from 'app/actions/userActions';
 
 class LoginContainer extends Component {
     constructor(props) {
@@ -13,8 +14,11 @@ class LoginContainer extends Component {
     }
 }
 
-function mapStateToProps() {
-    return {};
+function mapStateToProps(state) {
+    return {
+        number: state.userReducer.number,
+        // userData:
+    };
 }
 function mapDispatchToProps(dispatch) {
     return {

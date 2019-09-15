@@ -4,20 +4,33 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import Login from 'app/screens/Login';
 import Home from 'app/screens/Home';
+import PaymentPopup from 'app/screens/PaymentPopup';
 
 const RNApp = createStackNavigator(
     {
-        Login: {
-            screen: Login,
-            navigationOptions: { header: null, gesturesEnabled: false }
-        },
-        Home: {
-            screen: Home,
-            navigationOptions: { header: null, gesturesEnabled: false }
+        Login: createStackNavigator({
+            Login: {
+                screen: Login,
+                navigationOptions: { header: null, gesturesEnabled: false }
+            },
+            Home: {
+                screen: Home,
+                navigationOptions: { gesturesEnabled: true }
+            }
+
+        },{
+            headerMode: 'none',
+            mode: 'card'
+        }) ,
+        PaymentPopup: {
+            screen: PaymentPopup,
+            navigationOptions: { header: null, gesturesEnabled: true }
         }
     },
     {
-        initialRouteName: 'Login'
+        initialRouteName: 'Login',
+        headerMode: 'none',
+        mode: 'modal'
     }
 );
 

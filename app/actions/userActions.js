@@ -9,3 +9,10 @@ export function setNumber(number) {
     number
   };
 }
+
+export function setUserData(userData){
+  return {
+    type: types.SET_USER_DATA,
+    userData
+  }
+}

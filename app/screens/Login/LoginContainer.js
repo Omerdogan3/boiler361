@@ -17,12 +17,13 @@ class LoginContainer extends Component {
 function mapStateToProps(state) {
     return {
         number: state.userReducer.number,
-        // userData:
+        userData: state.userReducer.userData
     };
 }
 function mapDispatchToProps(dispatch) {
     return {
-        onLogin: (un, pwd) => dispatch(loginActions.requestLogin(un, pwd))
+        onLogin: (un, pwd) => dispatch(loginActions.requestLogin(un, pwd)),
+        setUserData: (userData) => dispatch(userActions.setUserData(userData))
     };
 }
 export default connect(

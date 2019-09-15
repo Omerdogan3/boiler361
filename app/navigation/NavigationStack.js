@@ -17,7 +17,6 @@ const RNApp = createStackNavigator(
                 screen: Home,
                 navigationOptions: { gesturesEnabled: true }
             }
-
         },{
             headerMode: 'none',
             mode: 'card'

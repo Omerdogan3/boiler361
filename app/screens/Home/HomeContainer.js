@@ -16,8 +16,8 @@ class HomeContainer extends Component {
 
 function mapStateToProps(state) {
     return {
+        userData: state.userReducer.userData,
         number: state.userReducer.number,
-        // userData
     };
 }
 function mapDispatchToProps(dispatch) {
